@@ -4,8 +4,6 @@ from typing import List
 from pathlib import Path
 
 
-
-
 class Parser:
     extensions: List[str] = []
 
@@ -26,6 +24,7 @@ class Parser:
 
     def copy(self, path, source, dest):
         shutil.copy2(path, dest / path.relative_to(source))
+
 
 class ResourceParser(Parser):
     extensions = [".jpg", ".png", ".gif", ".css", ".html"]
